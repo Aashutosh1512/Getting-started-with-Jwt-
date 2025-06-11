@@ -2,7 +2,7 @@
 
 
 📘 A simple Node.js starter project demonstrating how to implement JWT-based authentication using Express for your different use cases.
-
+```
 🚀 Features
 User Login: Authenticate users and issue a JWT upon successful login.
 
@@ -15,7 +15,8 @@ Role-Based Access Control (RBAC): An additional middleware (checkAdmin) demonstr
 Express.js: A minimal and flexible Node.js web application framework.
 
 Body-Parser: Middleware to parse incoming request bodies.
-
+```
+```
 🛠️ Tech Stack
 Node.js
 
@@ -29,7 +30,8 @@ Beginners learning about JWT
 Building secure REST APIs
 
 Quick prototyping for auth-based Node.js services
-
+```
+```
 🚀 Getting Started
 📋 Prerequisites
 Make sure you have Node.js and npm installed on your machine.
@@ -51,6 +53,7 @@ Install dependencies:
 npm install express jsonwebtoken body-parser
 
 Alternatively, you can create a package.json file and add these as dependencies, then run npm install.
+```
 
 💻 Usage
 Save the provided code: Save the Node.js code into a file named server.js (or any name you prefer) in your project directory.
@@ -72,17 +75,18 @@ Headers:
 Content-Type: application/json
 
 Request Body (JSON):
-
+```
 {
     "username": "testuser",
     "password": "password123"
 }
-
+```
 Expected Response:
-
+```
 {
     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoidGVzdHVzZXIiLCJwZXJtaXNzaW9uIjpbIndyaXRlIiwicmVhZCIsImRlbGV0ZSJdLCJyb2xlIjpbImFkbWluIl0sImlhdCI6MTYzNjQ2NzYwMCwiZXhwIjoxNjM2NDcxMjAwfQ.example_jwt_token_here"
 }
+```
 
 Copy this token.
 
@@ -96,7 +100,7 @@ Headers:
 Authorization: Bearer <YOUR_JWT_TOKEN> (Replace <YOUR_JWT_TOKEN> with the token obtained from the login step)
 
 Expected Response (if token is valid):
-
+```
 {
     "message": "Access granted to protected route!",
     "user": {
@@ -108,19 +112,20 @@ Expected Response (if token is valid):
         "exp": 1636471200
     }
 }
-
+```
 Expected Response (if no token or invalid token):
-
+```
 {
     "message": "No token provided"
 }
+```
 
 or
-
+```
 {
     "message": "Invalid or expired token"
 }
-
+```
 👑 3. Access an Admin-Only Route
 Endpoint: GET /api/confidential
 
@@ -131,7 +136,7 @@ Headers:
 Authorization: Bearer <YOUR_JWT_TOKEN> (Use the same token, as the dummyUser is an admin)
 
 Expected Response (if token valid and user is admin):
-
+```
 {
     "message": "Access granted to write route!",
     "user": {
@@ -143,12 +148,13 @@ Expected Response (if token valid and user is admin):
         "exp": 1636471200
     }
 }
-
+```
 Expected Response (if token valid but user is NOT admin - for a non-admin dummy user):
-
+```
 {
     "message": "the user is not admin , access not allowed "
 }
+```
 
 ⚙️ How it Works
 ➡️ JWT Authentication Flow
@@ -188,5 +194,4 @@ Environment Variables: Load the secret key from a .env file using a package like
 
 Key Management Services: For highly sensitive applications, use dedicated key management services provided by cloud providers (e.g., AWS KMS, Google Cloud Key Management).
 
-📄 License
-This project is open-source and available under the MIT License.
+Thanks for reading . 
